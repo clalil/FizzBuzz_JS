@@ -25,3 +25,29 @@ Question #4:
 To the best of your knowledge please explain why we are moving (number % 5 === 0) to the top?  
 Answer: In the FizzBuzz kata, numbers are divided by 15, 5 or 3. Since 15 must be at the top for all tests to pass (because it is divisable by both 5 and 3), perhaps it would be most logical to proceed with 5 and finally 3 since 15 is divisible by 5 and === 0 using modulus, however, 5 is not divisible by 3 when the remainder has to be === 0? 
 
+Question #5:  
+To the best of your knowledge please explain the difference between feature and unit test?  
+Answer: Unit tests are used to test the functionality of a single piece of code, like any of the FizzBuzz kata algoritms; i.e. does the number 3 equal to the response of 'Fizz'?
+
+Feature testing (acceptance testing) is a test of functionality from the user perspective, i.e. if a user does input the number 3 in the input field of my website - will the user be able to see the word 'Fizz'?  
+
+Question #6: 
+To the best of your knowledge please explain what the following code does:  
+```js
+describe('User can input a value and get FizzBuzz results', () => {
+    //The code snippet below tells the browser to initialize and load our local computer adress (root path)
+    before(async () => {
+        await  browser.init()
+        await  browser.visitPage('http://localhost:8080/')
+    });
+    //The code snippet below tells the browser to reload the page before each test
+    beforeEach(async () => {
+        await  browser.page.reload();
+    })
+    //The code snippet below tells the browser to close again after the test has finished
+    after(async ()=> {
+        await  browser.close();
+    })
+})
+```
+
