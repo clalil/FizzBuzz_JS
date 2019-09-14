@@ -22,4 +22,6 @@ Meanwhile, the strict equality operator (===) checks if both the values **and** 
 2 === '2' (false)  
 
 Question #4:  
-To the best of your knowledge please explain why we are moving (number % 5 === 0) to the top?
+To the best of your knowledge please explain why we are moving (number % 5 === 0) to the top?  
+Answer: In the FizzBuzz kata, numbers are divided by 15, 5 or 3. Since 15 must be at the top for all tests to pass (because it is divisable by both 5 and 3), perhaps it would be most logical to proceed with 5 and finally 3 since 15 is divisible by 5 and === 0 using modulus, however, 5 is not divisible by 3 when the remainder has to be === 0? 
+
