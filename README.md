@@ -14,4 +14,11 @@ Question #2:
 To the best of your knowledge please explain why we are placing the let fizzBuzz = new FizzBuzz outside the it block?
 Answer: Because whenn we write the test, we want to specify what attributes our new instance test object should have. If we wrote these attributes inside of our it-block, we would be testing if the object has them - not applying them to it.  
 
+Question #3:  
+To the best of your knowledge please explain the difference between using === and == in JS?
+Answer: The equality operator (==) checks if the values of operands are equal or not, in addition to **converting** the operands to the same type before making a comparison.  
+Meanwhile, the strict equality operator (===) checks if both the values **and** types of variables are equal between the operands (i.e. does not perform any type of conversion before making a comparison). I.e.:
+2 == '2' (true)
+2 === '2' (false)  
+
 
