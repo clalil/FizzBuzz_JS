@@ -14,7 +14,10 @@
 
 function FizzBuzz() {
     this.check = (number) => {
-        if (hasZeroRemainder(number, 15)) {
+        if (isNaN(number)) {
+            return 'You need to enter a number!'
+        }
+        else if (hasZeroRemainder(number, 15)) {
             return 'FizzBuzz';
         } else if (hasZeroRemainder(number, 5)) {
             return 'Buzz';

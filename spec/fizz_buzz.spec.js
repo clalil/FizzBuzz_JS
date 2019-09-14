@@ -20,4 +20,8 @@ describe('FizzBuzz', () => {
         expect(fizzBuzz.check(15)).to.eql('FizzBuzz')
     })
 
+    it('returns an error if you enter a non numeric value', () => {
+        expect(fizzBuzz.check('Hello')).to.eq('You need to enter a number!')
+    })
+
 })
