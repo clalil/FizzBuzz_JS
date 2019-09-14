@@ -50,4 +50,17 @@ describe('User can input a value and get FizzBuzz results', () => {
     })
 })
 ```
+Question #7: 
+To the best of your knowledge please explain what expectations in the context of testing are?
+```js
+  it('clicking on the "Check" button', async () => {
+      //Tells the test to wait for the user to input a value of 3
+    await browser.fillIn("input[id='value']", { with: "3" })
+    //Tells the test to wait for the user to click on the button to add the input value
+    await browser.clickOnButton("input[value='Check']")
+    //Tells the test to wait for the result of the test
+    let content = await browser.getContent("[id='display_answer']")
+    expect(content).to.eql('Fizz');
+  })
+```
 
