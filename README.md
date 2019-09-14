@@ -63,4 +63,26 @@ To the best of your knowledge please explain what expectations in the context of
     expect(content).to.eql('Fizz');
   })
 ```
+Question #8:
+To the best of your knowledge please write a line to line explanation of what is happening in this code?
+```js
+        document.addEventListener('DOMContentLoaded', () => {
+            //It waits for the document to load before calling the function
+            let button = document.getElementById('button')
+            let displayDiv = document.getElementById('display_answer')
+            //It assigns the HTML element of 'button' and 'display_answer' to variables
+            button.addEventListener('click', () => {
+            //It waits for a 'click' from the button
+                let value = document.getElementById('value').value
+            //It assigns the input value from the user to a variable
+                let fizzBuzz = new FizzBuzz
+            //It creates an instance of the FizzBuzz object
+                let result = fizzBuzz.check(value)
+            //It assigns the output value of the fizzBuzz check function to a variable
+                displayDiv.innerHTML = result;
+            //It displays the result inside of the assigned div element
+            })
+        })
+```
+
 
