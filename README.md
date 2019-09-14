@@ -21,4 +21,5 @@ Meanwhile, the strict equality operator (===) checks if both the values **and** 
 2 == '2' (true)
 2 === '2' (false)  
 
-
+Question #4:  
+To the best of your knowledge please explain why we are moving (number % 5 === 0) to the top?
