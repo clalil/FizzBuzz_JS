@@ -1,0 +1,11 @@
+{
+  "name": "fizzbuzz_js_clarissa",
+  "version": "1.0.0",
+  "description": "Fizzbuzz kata in JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Clarissa Liljander",
+  "license": "ISC"
+}
