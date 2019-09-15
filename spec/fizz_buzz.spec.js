@@ -1,7 +1,7 @@
 require('../spec.helper')
 
 describe('FizzBuzz', () => {
-    let fizzBuzz = new FizzBuzz({
+    let fizzBuzz = new FizzBuzz ({
     })
 
     it('returns a number if no game rules are met', () => {
