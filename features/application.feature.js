@@ -23,14 +23,14 @@ describe('User can input a value and get FizzBuzz results', () => {
     await browser.fillIn("input[id='value']", { with: "3" })
     await browser.clickOnButton("input[value='Check']")
     let content = await browser.getContent("[id='display_answer']")
-    expect(content) == ('Fizz');
+    expect(content).to.eql('Fizz');
   })
 
   it('clicks on the "Check" button, before entering a numeric value', async () => {
     await browser.fillIn("input[id='value']", { with: "" })
     await browser.clickOnButton("input[value='Check']")
     let content = await browser.getContent("[id='display_answer']")
-    expect(content) == ('Error, that\'s not a valid input');
+    expect(content).to.eql('Error, that\'s not a valid input');
   })
 
 });
