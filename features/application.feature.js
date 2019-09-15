@@ -30,7 +30,7 @@ describe('User can input a value and get FizzBuzz results', () => {
     await browser.fillIn("input[id='value']", { with: "" })
     await browser.clickOnButton("input[value='Check']")
     let content = await browser.getContent("[id='display_answer']")
-    expect(content).to.eql('Error, that\'s not a valid input');
+    expect(content).to.eql('You need to enter a valid number');
   })
 
 });
