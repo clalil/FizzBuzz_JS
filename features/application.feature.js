@@ -1,6 +1,6 @@
 require('../spec.helper');
 
-context('User can input a value and get FizzBuzz results', () => {
+describe('User can input a value and get FizzBuzz results', () => {
   
   before(async () => {
     await browser.init()

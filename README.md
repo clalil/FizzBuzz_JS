@@ -1,58 +1,56 @@
-# [WIP]README
+# My answers for the FizzBuzz Weekend Challenge
 
-Question #1: To the best of your knowledge please explain what the following lines of code do:
+## Question #1:  
+__To the best of your knowledge please explain what the following lines of code do:__
 ```
 global.browser = new BrowserHelpers()
-```
-Answer: To the best of my knowledge, the 'new' keyword is used when creating a new instance object from a class object. The BrowserHelpers class is, according to [Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.web.webpages.browserhelpers?view=aspnet-webpages-3.2), used to specify the custom browser information. Which would in this case be to tell the browser to identify our browser as the global.browser.
-```
 global.expect = chai.expect;
 ```
-This is telling chai (our expect statements) to add expect to the global object, which is an object that always exists in the [global]((https://developer.mozilla.org/en-US/docs/Glossary/Global_object)) scope.
+To the best of my knowledge after completing the assignment, in this case we are assigning every new instance of our feature tests (e2e training wheels) to the host environment, where all of our tests are executed, which in this case would be our local browser. We are also using Chai to assist us in our BDD/TDD. It has differently styled tests, and in this case we are assigning its 'expect style tests' to the global scope in our root folder/path. 
 
-Question #2:  
-To the best of your knowledge please explain why we are placing the let fizzBuzz = new FizzBuzz outside the it block?
-Answer: Because whenn we write the test, we want to specify what attributes our new instance test object should have. If we wrote these attributes inside of our it-block, we would be testing if the object has them - not applying them to it.  
+## Question #2:  
+__To the best of your knowledge please explain why we are placing the let fizzBuzz = new FizzBuzz outside the it block?__  
 
-Question #3:  
-To the best of your knowledge please explain the difference between using === and == in JS?
-Answer: The equality operator (==) checks if the values of operands are equal or not, in addition to **converting** the operands to the same type before making a comparison.  
+Because when we write the test, we want to specify what our new instance test object should look like from the start. If we wrote this line of code inside of our it-block, we would be testing if the instance object already exists.  
+
+## Question #3:  
+__To the best of your knowledge please explain the difference between using === and == in JS?__  
+
+The equality operator (==) checks if the values of operands are equal or not, in addition to **converting** the operands to the same type before making a comparison.  
 Meanwhile, the strict equality operator (===) checks if both the values **and** types of variables are equal between the operands (i.e. does not perform any type of conversion before making a comparison). I.e.:
 2 == '2' (true)
 2 === '2' (false)  
 
-Question #4:  
-To the best of your knowledge please explain why we are moving (number % 5 === 0) to the top?  
-Answer: In the FizzBuzz kata, numbers are divided by 15, 5 or 3. Since 15 must be at the top for all tests to pass (because it is divisable by both 5 and 3), perhaps it would be most logical to proceed with 5 and finally 3 since 15 is divisible by 5 and === 0 using modulus, however, 5 is not divisible by 3 when the remainder has to be === 0? 
+## Question #4:  
+__To the best of your knowledge please explain why we are moving (number % 5 === 0) to the top?__  
 
-Question #5:  
-To the best of your knowledge please explain the difference between feature and unit test and add a proper description of what we want to test for to the application.feature.js file.?
+In the FizzBuzz kata, numbers are divided by 15, 5 or 3. Since 15 must be at the top for all tests to pass (because it is divisable by both 5 and 3), perhaps it would be more logical to proceed with the next largest number? Regardless, the tests will go green no matter if 5 comes before 3 or not.  
 
-Answer: Unit tests are used to test the functionality of a single piece of code, like any of the FizzBuzz kata algoritms; i.e. does the number 3 equal to the response of 'Fizz'?
+## Question #5:  
+__To the best of your knowledge please explain the difference between feature and unit tests?  
 
-Feature testing (acceptance testing) is a test of functionality from the user perspective, i.e. if a user does input the number 3 in the input field of my website - will the user be able to see the word 'Fizz'?  
+Unit tests are used to test the functionality of a single piece of code, like any of the FizzBuzz kata algoritms; i.e. does the number 3 equal to the response of 'Fizz'? Feature testing (acceptance testing) on the other hand is a test of functionality from the user perspective, i.e. if a user does input the number 3 in the input field of my website - will the user be able to see the word 'Fizz'? 
 
-Question #6: 
-To the best of your knowledge please explain what the following code does:  
+## Question #6: 
+__To the best of your knowledge please explain what the following code does:__    
 ```js
 describe('User can input a value and get FizzBuzz results', () => {
-    //The code snippet below tells the browser to initialize and load our local computer adress (root path)
     before(async () => {
         await  browser.init()
         await  browser.visitPage('http://localhost:8080/')
     });
-    //The code snippet below tells the browser to reload the page before each test
     beforeEach(async () => {
         await  browser.page.reload();
     })
-    //The code snippet below tells the browser to close again after the test has finished
     after(async ()=> {
         await  browser.close();
     })
 })
 ```
-Question #7: 
-To the best of your knowledge please explain what expectations in the context of testing are?
+The code belongs to our feature test, it tells it that checks if the browser initializes and loads our local computer adress (root path), waits for the browser to reload before each test and that it closes the browser window after all of our tests have run.  
+
+## Question #7: 
+__To the best of your knowledge please explain what expectations in the context of testing are?__  
 ```js
   it('clicking on the "Check" button', async () => {
       //Tells the test to wait for the user to input a value of 3
@@ -64,8 +62,8 @@ To the best of your knowledge please explain what expectations in the context of
     expect(content).to.eql('Fizz');
   })
 ```
-Question #8:
-To the best of your knowledge please write a line to line explanation of what is happening in this code?
+## Question #8:
+__To the best of your knowledge please write a line to line explanation of what is happening in this code?__  
 ```js
         document.addEventListener('DOMContentLoaded', () => {
             //It waits for the document to load before calling the function
@@ -86,7 +84,7 @@ To the best of your knowledge please write a line to line explanation of what is
         })
 ```
 
-Question #9: 
-To the best of your knowledge please explain what a CDN (Content Delivery Network) is?  
+## Question #9: 
+__To the best of your knowledge please explain what a CDN (Content Delivery Network) is?__  
 
 

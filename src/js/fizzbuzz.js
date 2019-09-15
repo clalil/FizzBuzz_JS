@@ -18,7 +18,7 @@ function FizzBuzz() {
 };
 
 let hasZeroRemainder = (number, divider) => {
-    return number % divider == 0
+    return number % divider === 0
 }
 
 if (typeof module !== 'undefined' && module.exports) {
