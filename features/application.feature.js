@@ -16,7 +16,7 @@ context('User can input a value and get FizzBuzz results', () => {
   });
 
   it('renders the correct page title', async () => {
-    expect(await browser.page.title()).to.eql('My FizzBuzz kata using Javascript');
+    expect(await browser.page.title()).to.eql('Full Stack Developer Student | My FizzBuzz kata using Javascript | Clarissa Liljander');
   });
 
   it('clicks on the "Check" button', async () => {
