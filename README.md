@@ -20,19 +20,19 @@ Please note that your current Node version should be version 10.2.0 or higher.
 
 ### Running the tests  
 The acceptance tests for this application can be found inside of the features folder. Enter the following command into your terminal to run the tests:
-
+```
 $ npm run features
-
+```
 The above command will launch Chrome and run the acceptance tests on a local webserver.
 
 To execute the unit tests that are found inside of the spec folder, execute the following command.
-
+```
 $ npm run specs
-
+```
 Finally, to execute both the acceptance tests and unit tests enter the following command.
-
+```
 $ npm test
-
+``` 
 ## Acknowledgements  
 This challenge was given to me by the team at [CraftAcademy](https://www.craftacademy.se/).
 
