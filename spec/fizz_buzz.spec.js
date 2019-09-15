@@ -21,7 +21,7 @@ describe('FizzBuzz', () => {
     })
 
     it('returns an error if you enter a non numeric value', () => {
-        expect(fizzBuzz.check('Hello')).to.eq('You need to enter a number')
+        expect(fizzBuzz.check('Hello')).to.eq('You need to enter a valid number')
     })
 
     it('returns an error if you enter nothing', () => {
@@ -30,6 +30,10 @@ describe('FizzBuzz', () => {
 
     it('returns an error if you enter 0', () => {
         expect(fizzBuzz.check(0)).to.eq('Error, that\'s not a valid input')
+    })
+
+    it('returns an error if you enter a Float', () => {
+        expect(fizzBuzz.check(1.2)).to.eq('You need to enter a valid number')
     })
 
 })
