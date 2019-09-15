@@ -6,85 +6,52 @@ __To the best of your knowledge please explain what the following lines of code 
 global.browser = new BrowserHelpers()
 global.expect = chai.expect;
 ```
-To the best of my knowledge after completing the assignment, in this case we are assigning every new instance of our feature tests (e2e training wheels) to the host environment, where all of our tests are executed, which in this case would be our local browser. We are also using Chai to assist us in our BDD/TDD. It has differently styled tests, and in this case we are assigning its 'expect style tests' to the global scope in our root folder/path. 
+To the best of my knowledge, the short answer would be that we are enabling our testing framework (e2e) and assertion library (chai) to access our local browser object and it's implementation code.
 
 ## Question #2:  
 __To the best of your knowledge please explain why we are placing the let fizzBuzz = new FizzBuzz outside the it block?__  
-
-Because when we write the test, we want to specify what our new instance test object should look like from the start. If we wrote this line of code inside of our it-block, we would be testing if the instance object already exists.  
+If we, in the very beginning of the describe block, specify that we want to create an instance object (fizzBuzz) to be used for all of our tests, we omit the step where we have to manually apply this to each and every expectation.   
 
 ## Question #3:  
 __To the best of your knowledge please explain the difference between using === and == in JS?__  
 
 The equality operator (==) checks if the values of operands are equal or not, in addition to **converting** the operands to the same type before making a comparison.  
-Meanwhile, the strict equality operator (===) checks if both the values **and** types of variables are equal between the operands (i.e. does not perform any type of conversion before making a comparison). I.e.:
-2 == '2' (true)
+Meanwhile, the strict equality operator (===) checks if both the values **and** types of variables are equal between the operands (i.e. does not perform any type of conversion before making a comparison):  
+2 == '2' (true)  
 2 === '2' (false)  
 
 ## Question #4:  
 __To the best of your knowledge please explain why we are moving (number % 5 === 0) to the top?__  
 
-In the FizzBuzz kata, numbers are divided by 15, 5 or 3. Since 15 must be at the top for all tests to pass (because it is divisable by both 5 and 3), perhaps it would be more logical to proceed with the next largest number? Regardless, the tests will go green no matter if 5 comes before 3 or not.  
+In the FizzBuzz kata, numbers are divided by 15, 5 and 3. Since 15 must be at the top for all tests to pass (because it is divisable by both 5 and 3), perhaps it would be more logical to proceed with the next largest number? Regardless, the tests will go green no matter if 5 comes before 3 or not.  
 
 ## Question #5:  
-__To the best of your knowledge please explain the difference between feature and unit tests?  
+__To the best of your knowledge please explain the difference between feature and unit tests?__  
 
 Unit tests are used to test the functionality of a single piece of code, like any of the FizzBuzz kata algoritms; i.e. does the number 3 equal to the response of 'Fizz'? Feature testing (acceptance testing) on the other hand is a test of functionality from the user perspective, i.e. if a user does input the number 3 in the input field of my website - will the user be able to see the word 'Fizz'? 
 
 ## Question #6: 
 __To the best of your knowledge please explain what the following code does:__    
-```js
-describe('User can input a value and get FizzBuzz results', () => {
-    before(async () => {
-        await  browser.init()
-        await  browser.visitPage('http://localhost:8080/')
-    });
-    beforeEach(async () => {
-        await  browser.page.reload();
-    })
-    after(async ()=> {
-        await  browser.close();
-    })
-})
-```
-The code belongs to our feature test, it tells it that checks if the browser initializes and loads our local computer adress (root path), waits for the browser to reload before each test and that it closes the browser window after all of our tests have run.  
+
+The code belongs to our feature test, it tells it to initialize the browser before the tests are run, loading the current url for our app, reload the browser before each test and to close the browser window after all of our tests have been executed.  
 
 ## Question #7: 
 __To the best of your knowledge please explain what expectations in the context of testing are?__  
-```js
-  it('clicking on the "Check" button', async () => {
-      //Tells the test to wait for the user to input a value of 3
-    await browser.fillIn("input[id='value']", { with: "3" })
-    //Tells the test to wait for the user to click on the button to add the input value
-    await browser.clickOnButton("input[value='Check']")
-    //Tells the test to wait for the result of the test
-    let content = await browser.getContent("[id='display_answer']")
-    expect(content).to.eql('Fizz');
-  })
-```
+
+The expectations are an asynchronous function where the test waits for the user to input the value of '3', click on the 'check' button and finally waits for the result to be rendered from #display_answer before it makes a comparison of it (the expected content) and the pre-defined expected output ('Fizz').  
+
 ## Question #8:
 __To the best of your knowledge please write a line to line explanation of what is happening in this code?__  
-```js
-        document.addEventListener('DOMContentLoaded', () => {
-            //It waits for the document to load before calling the function
-            let button = document.getElementById('button')
-            let displayDiv = document.getElementById('display_answer')
-            //It assigns the HTML element of 'button' and 'display_answer' to variables
-            button.addEventListener('click', () => {
-            //It waits for a 'click' from the button
-                let value = document.getElementById('value').value
-            //It assigns the input value from the user to a variable
-                let fizzBuzz = new FizzBuzz
-            //It creates an instance of the FizzBuzz object
-                let result = fizzBuzz.check(value)
-            //It assigns the output value of the fizzBuzz check function to a variable
-                displayDiv.innerHTML = result;
-            //It displays the result inside of the assigned div element
-            })
-        })
-```
+
+1. The addEventListener method waits for the HTML document to be fully loaded and parsed (excluding stylesheets etc).  
+2. It assigns the node element 'button' to the variable 'button'.  
+3. It assigns the node element 'display_answer' to the variable 'displayDiv'.  
+4. It listens for a 'click' from the button, before executing the arrow function.  
+5. It assigns the node element 'value', which in this case is the user input value, to the 'value' variable.  
+6. It creates a new instance object from the FizzBuzz constructor object and assigns it to a variable called 'fizzBuzz'.  
+7. The instance object takes the user's input value and runs it through the .check function and assigns the result to the 'result' variable.  
+8. It assigns the 'result' to the displayDiv variable, which in turn uses the .innerHTML property to be able to set the contents of 'result' and display that inside of itself.  
 
 ## Question #9: 
-__To the best of your knowledge please explain what a CDN (Content Delivery Network) is?__  
-
-
+__To the best of your knowledge please explain what a CDN (Content Delivery Network) is?__   
+A CDN is a geographically distributed group of servers used to reduce the distance between the user and the website content. The benefits of a CDN are faster loading time, reduced bandwidth costs, improved security and increased content availability.  
