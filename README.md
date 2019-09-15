@@ -1,4 +1,42 @@
-# My answers for the FizzBuzz Weekend Challenge
+# FizzBuzz Javascript style  
+## Built with  
+**Front end:** Vanilla JS, HTML and CSS.  
+**Back end:** Ruby   
+**Testing:** E2E Training Wheels  
+
+## About this repository  
+This repository contains a simple FizzBuzz kata calculator. The rules of FizzBuzz is that if the number is divisible by three, you say “Fizz” and if it is divisible by five you say “Buzz”. For numbers which are multiples of both three and five you say “FizzBuzz".  
+
+## Deployment  
+This FizzBuzz JS calculator is currently deployed online from a GitHub page in this repository.  
+
+## Getting started  
+To test this application you need to fork it to your own GitHub account and clone it to your local workspace.  
+
+### Dependencies
+To test the methods and features of this calculator you need to have the JS testing framework E2E Training Wheels installed and configured on your local computer. Step by step instructions in both text and video format can be found at this [Training Wheels repository](https://www.npmjs.com/package/e2e_training_wheels).
+
+Please note that your current Node version should be version 10.2.0 or higher.
+
+### Running the tests  
+The acceptance tests for this application can be found inside of the features folder. Enter the following command into your terminal to run the tests:
+
+$ npm run features
+
+The above command will launch Chrome and run the acceptance tests on a local webserver.
+
+To execute the unit tests that are found inside of the spec folder, execute the following command.
+
+$ npm run specs
+
+Finally, to execute both the acceptance tests and unit tests enter the following command.
+
+$ npm test
+
+## Acknowledgements  
+This challenge was given to me by the team at [CraftAcademy](https://www.craftacademy.se/).
+
+------------------------------------------------------
 
 ## Question #1:  
 __To the best of your knowledge please explain what the following lines of code do:__
