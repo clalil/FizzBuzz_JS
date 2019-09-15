@@ -25,7 +25,11 @@ describe('FizzBuzz', () => {
     })
 
     it('returns an error if you enter nothing', () => {
-        expect(fizzBuzz.check('')).to.eq('Error, no user input')
+        expect(fizzBuzz.check('')).to.eq('Error, that\'s not a valid input')
+    })
+
+    it('returns an error if you enter 0', () => {
+        expect(fizzBuzz.check(0)).to.eq('Error, that\'s not a valid input')
     })
 
 })

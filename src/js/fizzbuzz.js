@@ -1,13 +1,11 @@
 
 function FizzBuzz() {
     this.check = (number) => {
-        if (number == '') {
-            return 'Error, no user input'
-        }
-        else if (isNaN(number)) {
+        if ((number == '') || (number == 0)) {
+            return 'Error, that\'s not a valid input'
+        } else if (isNaN(number)) {
             return 'You need to enter a number'
-        }
-        else if (hasZeroRemainder(number, 15)) {
+        } else if (hasZeroRemainder(number, 15)) {
             return 'FizzBuzz';
         } else if (hasZeroRemainder(number, 5)) {
             return 'Buzz';
