@@ -8,7 +8,7 @@
 This repository contains a simple FizzBuzz kata calculator. The rules of FizzBuzz is that if the number is divisible by three, you say “Fizz” and if it is divisible by five you say “Buzz”. For numbers which are multiples of both three and five you say “FizzBuzz".  
 
 ## Deployment  
-This FizzBuzz JS calculator is currently deployed online from a GitHub page in this repository.  
+This FizzBuzz JS calculator is currently deployed online from a GitHub page in this repository. You may view the application [here](https://clalil.github.io/Fizzbuzz_JS/). 
 
 ## Getting started  
 To test this application you need to fork it to your own GitHub account and clone it to your local workspace.  
