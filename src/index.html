@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Full Stack Developer Student | My FizzBuzz kata using Javascript | Clarissa Liljander</title>
+</head>
+<body>
+<div id="container">
+    <h2 class="ui header">
+        <img class="ui image" src="https://semantic-ui.com/images/icons/school.png">
+            <div class="content">
+                Welcome to the FizzBuzz kata
+            </div>
+    </h2>
+    <div class="ui action input">
+        <input type="text" id="value" placeholder="Enter a number">
+        <input type="submit" value="Check" id="button" class="ui secondary button">
+    </div>
+    <div class="ui floating message">
+        <div id="display_answer">Fizz, Buzz or FizzBuzz?</div>
+    </div>
+</div>
+
+<footer id="footer">
+    <p>Created with <i class="icon heart"></i> 2019</p>
+</footer>
+
+    <script src="js/fizzbuzz.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let button = document.getElementById('button')
+            let displayDiv = document.getElementById('display_answer')
+            button.addEventListener('click', () =>{
+                let value = document.getElementById('value').value
+                let fizzBuzz = new FizzBuzz
+                let result = fizzBuzz.check(value)
+                displayDiv.innerHTML = result;
+            })
+        })
+    </script>
+
+</body>
+</html>
