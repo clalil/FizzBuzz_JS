@@ -14,22 +14,20 @@ This FizzBuzz JS calculator is currently deployed online from a GitHub page in t
 To test this application you need to fork it to your own GitHub account and clone it to your local workspace.  
 
 ### Dependencies
-To test the methods and features of this calculator you need to have the JS testing framework E2E Training Wheels installed and configured on your local computer. Step by step instructions in both text and video format can be found at this [Training Wheels repository](https://www.npmjs.com/package/e2e_training_wheels).
+To test the methods and features of this calculator you need to have the JS testing framework E2E Training Wheels and its dependencies installed and configured on your local computer. Step by step instructions in both text and video format can be found at this [Training Wheels repository](https://www.npmjs.com/package/e2e_training_wheels).
 
 Please note that your current Node version should be version 10.2.0 or higher.
 
 ### Running the tests  
-The acceptance tests for this application can be found inside of the features folder. Enter the following command into your terminal to run the tests:
+The acceptance tests for this application can be found inside of the features folder. Enter the following command into your terminal to launch Chrome and run the acceptance tests on your local webserver.
 ```
 $ npm run features
 ```
-The above command will launch Chrome and run the acceptance tests on a local webserver.
-
-To execute the unit tests that are found inside of the spec folder, execute the following command.
+To execute the unit tests that are found inside of the spec folder, execute the following command:
 ```
 $ npm run specs
 ```
-Finally, to execute both the acceptance tests and unit tests enter the following command.
+Finally, to execute both the acceptance tests and unit tests enter the following command:
 ```
 $ npm test
 ``` 
