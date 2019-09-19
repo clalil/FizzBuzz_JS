@@ -1,4 +1,6 @@
 # FizzBuzz Javascript style  
+### Author  
+[Clarissa Liljander](https://github.com/clalil)  
 ## Built with  
 **Front end:** Vanilla JS, HTML and CSS.  
 **Back end:** Ruby   
